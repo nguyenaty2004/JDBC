@@ -1,0 +1,49 @@
+crEATE DATABASE Quan_Ly_Sach;
+use Quan_Ly_Sach;
+
+create table Authors(
+Authors_id INT NOT NULL auto_increment PRIMARY key,
+name_Authors varchar(255),
+birth_date DATETIME,
+nationality VARCHAR(255)
+);
+
+
+create table Genres(
+Genres_id int NOT NULL auto_increment PRIMARY key,
+name_Genres varchar(255)
+);
+
+create table Books(
+Book_id int not null primary key,
+title varchar(255),
+publication_year int,
+Authors_id int,
+Genres_id int,
+foreign key (Authors_id) references Authors (Authors_id),
+foreign key (Genres_id) references Genres (Genres_id)
+);
+
+INSERT into Authors value (1,'Lê Ngọc Nguyên','2004-07-18','VN');
+INSERT into Authors value (2,'Nguyễn Thị Bình','2004-07-17','VN');
+INSERT into Authors value (3,'Lữ Thị Tuyến ','1981-05-19','VN');
+INSERT into Authors value (4,'Lê Ngọc Bình ','1981-11-25','VN');
+INSERT into Authors value (5,'Lê Thanh Thảo','2003-06-29','VN');
+INSERT into Authors value (6,'Lê Ngọc Minh','1982-01-01','VN');
+INSERT into Authors value (7,'Nguyễn Thị Liên ','1900-01-01','VN');
+INSERT into Authors value (8,'Lê Ngọc Trạch','1900-01-01','VN');
+INSERT into Authors value (9,'Lê Ngọc dũng ','1997-01-01','VN');
+INSERT into Authors value (10,'Lê Ngọc CƯờng ','1995-01-01','VN');
+
+INSERT into Genres value(1,'Sách Bí ẩn');
+INSERT into Genres value(2,'Tình cảm');
+INSERT into Genres value(3,'Sách Giả tưởng và khoa học viễn tưởng');
+INSERT into Genres value(4,'Sách Kinh dị, giật gân');
+INSERT into Genres value(5,'Sách truyền cảm hứng');
+INSERT into Genres value(6,'Sách Tiểu sử, tự truyện và hồi ký');
+INSERT into Genres value(7,'Sách Truyện ngắn ');
+INSERT into Genres value(8,'Sách dạy nấu ăn ');
+INSERT into Genres value(9,'Sách Bài luận');
+INSERT into Genres value(10,'Sách lịch sử');
+
+insert into Books value (1,'',)
